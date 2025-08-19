@@ -25,7 +25,7 @@
             },
             {
                 "command": "sk-copilot-ai.triggerInline",
-                "title": "sk-copilot-ai: Trigger Inline Suggestion"
+                "title": "sk-copilot-ai: Trigger sk Inline Suggestion"
             }
         ],
         "configuration": {
@@ -34,12 +34,12 @@
             "properties": {
                 "sk-copilot-ai.apiUrl": {
                     "type": "string",
-                    "default": "https://api.openai.com/v1/chat/completions",
+                    "default": "https://openrouter.ai/api/v1/chat/completions",
                     "description": "LLM endpoint (must support streaming)"
                 },
                 "sk-copilot-ai.model": {
                     "type": "string",
-                    "default": "gpt-4o-mini"
+                    "default": "openai/gpt-oss-20b:free"
                 },
                 "sk-copilot-ai.temperature": {
                     "type": "number",
