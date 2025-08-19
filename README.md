@@ -1,4 +1,4 @@
-# OpenRouter Assistant (VS Code Extension)
+# AI Assistant (VS Code Extension) - Sk Alamin
 
 AI code completions in VS Code, powered by [OpenRouter](https://openrouter.ai).  
 Bring your own API key and model — no extra billing handled by the extension.
