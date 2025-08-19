@@ -1,0 +1,11 @@
+# Node.js dependencies
+node_modules/
+
+# Output directory
+out/
+
+# Package lock file
+package-lock.json
+
+#environment variables
+.env

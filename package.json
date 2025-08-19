@@ -1,0 +1,71 @@
+{
+    "name": "sk-copilot-ai",
+    "displayName": "sk-copilot-ai(inline LLM suggestions)",
+    "publisher": "Sk Alamin",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:typescript",
+        "onCommand:sk-copilot-ai.setApiKey",
+        "onCommand:sk-copilot-ai.clearApiKey"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "sk-copilot-ai.setApiKey",
+                "title": "sk-copilot-ai: Set API Key"
+            },
+            {
+                "command": "sk-copilot-ai.clearApiKey",
+                "title": "sk-copilot-ai: Clear API Key"
+            },
+            {
+                "command": "sk-copilot-ai.triggerInline",
+                "title": "sk-copilot-ai: Trigger Inline Suggestion"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "sk-copilot-ai",
+            "properties": {
+                "sk-copilot-ai.apiUrl": {
+                    "type": "string",
+                    "default": "https://api.openai.com/v1/chat/completions",
+                    "description": "LLM endpoint (must support streaming)"
+                },
+                "sk-copilot-ai.model": {
+                    "type": "string",
+                    "default": "gpt-4o-mini"
+                },
+                "sk-copilot-ai.temperature": {
+                    "type": "number",
+                    "default": 0.2
+                },
+                "sk-copilot-ai.maxTokens": {
+                    "type": "number",
+                    "default": 256
+                },
+                "sk-copilot-ai.extraHeaders": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Optional extra headers as JSON string"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "compile": "tsc -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^24.3.0",
+        "@types/vscode": "^1.80.0",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "abort-controller": "^3.0.0"
+    }
+}
