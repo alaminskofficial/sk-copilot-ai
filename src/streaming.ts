@@ -34,7 +34,7 @@ export default async function streamCompletions({
       throw new Error(`HTTP ${res.status}`);
     }
     console.log("LLM Response:", JSON.stringify(body, null, 2));
-    vscode.window.showInformationMessage("calling copilot for suggestions");
+    vscode.window.showInformationMessage("calling sk-copilot-ai for suggestions");
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
@@ -63,7 +63,7 @@ export default async function streamCompletions({
             json?.choices?.[0]?.text ??
             "";
 
-          vscode.window.showInformationMessage("suggestion returned from copilot" + token);
+          vscode.window.showInformationMessage("suggestion returned from sk-copilot-ai" + token);
           if (token) onToken(token);
         } catch {
           console.warn("JSON parse failed on line:", line);
